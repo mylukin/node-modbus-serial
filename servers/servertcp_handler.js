@@ -25,13 +25,11 @@ var modbusSerialDebug = require("debug")("modbus-serial");
  * @private
  */
 function _errorRequestBufferLength(requestBuffer) {
-
+    return false; // length is okay - no error
     if (requestBuffer.length !== 8) {
         modbusSerialDebug("request Buffer length " + requestBuffer.length + " is wrong - has to be >= 8");
         return true;
-    }
-
-    return false; // length is okay - no error
+    }    
 }
 
 /**
